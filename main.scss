@@ -80,10 +80,12 @@ body{
       }
    }
    .burgerMenu{
+      padding: 0.4rem;
+
       display: none;
 
-      align-items: center;
-      justify-content: center;
+      border-radius: 0.6rem;
+      background: rgba(25, 25, 25, 0.1);
    }
 
    .signs{
@@ -121,7 +123,12 @@ body{
       }
    }
    .signsMenu{
+      padding: 0.4rem;
+
       display: none;
+
+      border-radius: 0.6rem;
+      background: rgba(25, 25, 25, 0.1);
    }
 }
 
@@ -165,7 +172,7 @@ body{
       a{
          padding: 1rem 2rem;
 
-         width: 10rem;
+         width: 10.8rem;
 
          display: flex;
          justify-content: center;
@@ -190,8 +197,15 @@ body{
 
    .logo{
       padding-top: 6rem;
-      z-index: 1;
+
       img{
+         width: 100%;
+         height: auto;
+
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         text-align: center;
          background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #ffffff 100%);
       }
    }
@@ -243,6 +257,14 @@ body{
 }
 @media screen and (max-width: 720px) {
    .nav{
+      padding: 0 1rem;
+
+      width: 100%;
+
+      left: 0;
+
+      border-radius: 0;
+
       .signs{
          display: none !important;
       }

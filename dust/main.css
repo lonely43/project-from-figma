@@ -64,9 +64,10 @@ body {
   opacity: 0.75;
 }
 .nav .burgerMenu {
+  padding: 0.4rem;
   display: none;
-  align-items: center;
-  justify-content: center;
+  border-radius: 0.6rem;
+  background: rgba(25, 25, 25, 0.1);
 }
 .nav .signs {
   display: flex;
@@ -95,7 +96,10 @@ body {
   cursor: pointer;
 }
 .nav .signsMenu {
+  padding: 0.4rem;
   display: none;
+  border-radius: 0.6rem;
+  background: rgba(25, 25, 25, 0.1);
 }
 
 .head {
@@ -132,7 +136,7 @@ body {
 }
 .head .info a {
   padding: 1rem 2rem;
-  width: 10rem;
+  width: 10.8rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -151,9 +155,14 @@ body {
 }
 .head .logo {
   padding-top: 6rem;
-  z-index: 1;
 }
 .head .logo img {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
   background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #ffffff 100%);
 }
 .head .heading {
@@ -191,6 +200,12 @@ body {
   }
 }
 @media screen and (max-width: 720px) {
+  .nav {
+    padding: 0 1rem;
+    width: 100%;
+    left: 0;
+    border-radius: 0;
+  }
   .nav .signs {
     display: none !important;
   }
