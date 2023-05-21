@@ -103,7 +103,7 @@ body {
 }
 
 .head {
-  padding-top: 6rem;
+  padding-top: 8rem;
   width: 100%;
   height: auto;
   display: flex;
@@ -155,6 +155,7 @@ body {
 }
 .head .logo {
   padding-top: 6rem;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 30%, #ffffff 70%);
 }
 .head .logo img {
   width: 100%;
@@ -163,13 +164,14 @@ body {
   justify-content: center;
   align-items: center;
   text-align: center;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #ffffff 100%);
 }
 .head .heading {
-  padding: 0 10rem;
+  transform: translateY(-6rem);
+  padding: 0 6rem;
   width: 100%;
   display: flex;
   justify-content: space-between;
+  gap: 2rem;
 }
 .head .heading .info {
   align-items: flex-start;
@@ -211,6 +213,16 @@ body {
   }
   .nav .signsMenu {
     display: flex !important;
+  }
+  .head .heading {
+    padding: 0 1rem;
+    flex-direction: column-reverse;
+  }
+  .head .heading .info a {
+    width: 100% !important;
+  }
+  .head .heading .item {
+    width: 100%;
   }
 }
 @media screen and (max-width: 560px) {

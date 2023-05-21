@@ -133,7 +133,7 @@ body{
 }
 
 .head{
-   padding-top: 6rem;
+   padding-top: 8rem;
 
    width: 100%;
    height: auto;
@@ -198,6 +198,8 @@ body{
    .logo{
       padding-top: 6rem;
 
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0) 30%, #ffffff 70%);
+
       img{
          width: 100%;
          height: auto;
@@ -206,17 +208,19 @@ body{
          justify-content: center;
          align-items: center;
          text-align: center;
-         background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #ffffff 100%);
       }
    }
 
    .heading{
-      padding: 0 10rem;
+      transform: translateY(-6rem);
+      padding: 0 6rem;
 
       width: 100%;
 
       display: flex;
       justify-content: space-between;
+      gap: 2rem;
+
       .info{
          align-items: flex-start;
 
@@ -256,6 +260,8 @@ body{
    }
 }
 @media screen and (max-width: 720px) {
+
+   // editing nav bar
    .nav{
       padding: 0 1rem;
 
@@ -272,7 +278,29 @@ body{
          display: flex !important;
       }
    }
+
+
+   //перемещение heading'а
+   .head{
+      .heading{
+         padding: 0 1rem;
+
+         flex-direction: column-reverse;
+         
+         .info{
+            a{
+               width: 100% !important;
+            }
+         }
+
+         .item{
+            width: 100%;
+         }
+      }
+   }
 }
+
+// hide label text
 @media screen and (max-width: 560px) {
    .nav{
       .label{
