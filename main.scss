@@ -2,6 +2,7 @@
 
 
 *{
+   scroll-behavior: smooth;
    box-sizing: border-box;
    line-height: 1.25;
    padding: 0;
@@ -18,15 +19,25 @@ body{
 }
 
 .nav{
-   padding: 2rem 2rem;
+   z-index: 2;
 
-   width: 100%;
+   position: fixed;
+   top: 1rem;
+   left: 1rem;
+
+   width: calc(100% - 2rem);
    height: 4rem;
 
-   display: grid;
-   grid-template-columns: repeat(3, 1fr);
-   justify-items: center;
-   gap: 10px;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+
+   -webkit-backdrop-filter: blur(1rem);
+   backdrop-filter: blur(1rem);
+
+   border-radius: 1rem;
+
+   background: rgba(255, 255, 255, 0);
 
 
    .label{
@@ -42,6 +53,8 @@ body{
    }
 
    .btns{
+      -webkit-backdrop-filter: blur(0);
+      backdrop-filter: blur(0);
       display: grid;
       grid-template-columns: repeat(5, 1fr);      
       gap: 2rem;
@@ -50,9 +63,6 @@ body{
       justify-self: center;
 
       a{
-         border: 0.6rem solid rgba(238, 238, 238, 0);
-         border-radius: 0.6rem;
-
          color: black;
          text-decoration: none;
          text-align: center;
@@ -65,10 +75,15 @@ body{
          transition: 0.2s;
 
          &:hover{
-            border: 0.6rem solid rgb(238, 238, 238);
-            background: rgb(238, 238, 238);
+            opacity: 0.75;
          }
       }
+   }
+   .burgerMenu{
+      display: none;
+
+      align-items: center;
+      justify-content: center;
    }
 
    .signs{
@@ -89,6 +104,11 @@ body{
          background-color: rgba(223, 223, 223, 0);
 
          cursor: pointer;
+
+         transition: 0.4s;
+         &:hover{
+            opacity: 0.75;
+         }
       }
 
       .signUp{
@@ -98,13 +118,10 @@ body{
          border-radius: 0.6rem;
 
          cursor: pointer;
-         transition: 1s;
-
-         &:hover{
-            border: 0.1rem solid rgb(255, 255, 255);
-            background-color: rgb(238, 238, 238);
-         }
       }
+   }
+   .signsMenu{
+      display: none;
    }
 }
 
@@ -163,6 +180,11 @@ body{
 
          background: linear-gradient(90.59deg, #504DE2 13.95%, #3E7EFB 69.14%), #424242;
          border-radius: 16px;
+
+         transition: 0.4s;
+         &:hover{
+            opacity: 0.75;
+         }
       }
    }
 
@@ -171,6 +193,71 @@ body{
       z-index: 1;
       img{
          background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #ffffff 100%);
+      }
+   }
+
+   .heading{
+      padding: 0 10rem;
+
+      width: 100%;
+
+      display: flex;
+      justify-content: space-between;
+      .info{
+         align-items: flex-start;
+
+         .text{
+            h1{
+               text-align: start;
+               font-size: 2em;
+            }
+            p{
+               text-align: start;
+               font-size: 1em;
+            }
+         }
+      }
+      .item{
+         box-sizing: border-box;
+
+         width: 530px;
+         height: 350px;
+
+         border: 1px solid rgba(25, 25, 25, 0.1);
+         border-radius: 18px;
+      }
+   }
+}
+
+// editing nav bar
+@media screen and (max-width: 1060px) {
+   .nav{
+      .btns{
+         display: none !important;
+      }
+      .burgerMenu{
+         display: flex !important;
+         order: -1;
+      }
+   }
+}
+@media screen and (max-width: 720px) {
+   .nav{
+      .signs{
+         display: none !important;
+      }
+      .signsMenu{
+         display: flex !important;
+      }
+   }
+}
+@media screen and (max-width: 560px) {
+   .nav{
+      .label{
+
+         h1{
+            display: none;
+         }
       }
    }
 }
