@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap&family=IBM+Plex+Sans:wght@100;200;300;400;500;600;700&family=Roboto:wght@100;300;400;500;700;900&display=swap');
 
 
 *{
@@ -47,8 +47,10 @@ body{
       gap: 0.6rem;
 
       h1{
+         font-family: 'Work Sans', sans-serif;
          font-size: 1.65em;
          font-weight: 600;
+         font-style: normal;
       }
    }
 
@@ -80,12 +82,38 @@ body{
       }
    }
    .burgerMenu{
+      z-index: 1;
+
       padding: 0.4rem;
 
       display: none;
 
       border-radius: 0.6rem;
       background: rgba(25, 25, 25, 0.1);
+   }
+   .btnsForBurgerMenu{
+      overflow: hidden;
+      position: absolute;
+      top: -1rem;
+      left: 0;
+
+      width: 100vw;
+      height: 100vh;
+
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 1rem;
+
+      background-color: white;
+
+      transform: translateX(-100rem);
+
+      transition: 0.4s ease-in-out;
+   }
+   .showBurgerMenu{
+      transform: translateX(0rem);
    }
 
    .signs{
@@ -172,7 +200,7 @@ body{
       a{
          padding: 1rem 2rem;
 
-         width: 10.8rem;
+         width: 15.25rem;
 
          display: flex;
          justify-content: center;
@@ -200,6 +228,9 @@ body{
 
       background: linear-gradient(180deg, rgba(255, 255, 255, 0) 30%, #ffffff 70%);
 
+      overflow-y: hidden;
+
+      max-height: 35rem;
       img{
          width: 100%;
          height: auto;
@@ -214,22 +245,27 @@ body{
    .heading{
       transform: translateY(-6rem);
       padding: 0 6rem;
+      padding-top: 8rem;
 
       width: 100%;
 
       display: flex;
-      justify-content: space-between;
+      justify-content: space-evenly;
       gap: 2rem;
 
       .info{
+         gap: 1rem;
          align-items: flex-start;
 
          .text{
             h1{
+               text-transform: none;
                text-align: start;
+               font-weight: 600;
                font-size: 2em;
             }
             p{
+               color: #848484;
                text-align: start;
                font-size: 1em;
             }
@@ -247,21 +283,492 @@ body{
    }
 }
 
-// editing nav bar
-@media screen and (max-width: 1060px) {
-   .nav{
-      .btns{
-         display: none !important;
+.items{
+   padding-top: 6rem;
+
+   width: 100%;
+
+   display: flex;
+   align-items: center;
+   flex-direction: column;
+   gap: 4rem;
+
+   .info{
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      gap: 4rem;
+
+      .text{
+         display: flex;
+         flex-direction: column;
+         gap: 1rem;
+
+         text-align: center;
+
+         h1{
+            font-size: 2em;
+            font-weight: 600;
+         }
+
+         p{
+            color: #848484;
+            font-size: 1em;
+         }
       }
-      .burgerMenu{
-         display: flex !important;
-         order: -1;
+
+      .chooser{
+         padding: 0.2rem;
+
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         gap: 1rem;
+
+         border: 0.1rem solid rgba(25, 25, 25, 0.1);
+         border-radius: 0.6rem;
+
+         button{
+            padding: 0.6rem 1rem;
+
+            font-family: 'IBM Plex Sans';
+            font-weight: 500;
+            font-size: 1em;
+
+            border: none;
+            border-radius: 0.6rem;
+
+            background-color: rgba(25, 25, 25, 0);
+
+            cursor: pointer;
+         }
+         .activeChoose{
+            background: rgba(25, 25, 25, 0.05)
+         }
+      }
+   }
+
+   .cards{
+      font-family: 'IBM Plex Sans';
+
+      display: grid;
+      gap: 2rem;
+      
+      .card{
+         .bestSeller{
+            position: absolute;
+            right: 1rem;
+            top: -1rem;
+
+            padding: 0.6rem 1rem;
+
+            background: #3E43FB;
+            box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.07);
+            border-radius: 99px;
+
+            h1{
+               font-family: 'Work Sans', sans-serif;
+               color: #ffffff;
+               font-size: 0.8em;
+               font-weight: 400;
+            }
+         }
+
+         position: relative;
+
+         padding: 1.45rem;
+
+         min-width: 22rem;
+         //min-height: 28rem;
+
+         display: flex;
+         flex-direction: column;
+         gap: 2rem;
+
+         border: 1px solid rgba(25, 25, 25, 0.1);
+         box-shadow: 0 0 1rem rgba(25, 25, 25, 0.05);
+         border-radius: 1rem;
+
+         .labelCard{
+            letter-spacing: normal;
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+            .info{
+               width: 100%;
+               display: flex;
+               align-items: start;
+
+               gap: 0;
+
+               text-align: start;
+
+               h1{
+                  font-size: 1.6em;
+                  font-weight: 600;
+               }
+               p{
+                  color: #848484;
+                  font-size: 1em;
+                  font-weight: 400;
+               }
+            }
+
+            .priceCard{
+               h1{
+                  position: relative;
+                  font-size: 2.46em;
+
+                  &::after{
+                     position: absolute;
+                     left: 1;
+                     bottom: 0;
+
+                     content: attr(word);
+
+                     color: #848484;
+                     font-size: 0.6em;
+                     font-weight: 400;
+                  }
+               }
+            }
+         }
+
+         .cardBtn{
+            button{
+               padding: 0.8rem 0rem;
+
+               width: 100%;
+
+               font-weight: 500;
+               font-size: 14px;
+               line-height: 18px;
+
+               background: #FFFFFF;
+               border: 1px solid rgba(25, 25, 25, 0.1);
+               box-shadow: 0px 0px 0.4rem rgba(25, 25, 25, 0.05);
+               border-radius: 0.6rem;
+
+               cursor: pointer;
+               transition: 0.4s;
+
+               &:hover{
+                  opacity: 0.75;
+               }
+            }
+         }
+         .footerCard{
+            width: 100%;
+
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            
+            div{
+               display: flex;
+               justify-content: space-between;
+               align-items: center;
+
+               p{
+                  font-size: 1em;
+                  color: #848484;
+               }
+               h1{
+                  font-size: 1em;
+                  font-weight: 500;
+               }
+            }
+         }
       }
    }
 }
-@media screen and (max-width: 720px) {
 
-   // editing nav bar
+.questions{
+   padding-top: 20rem;
+
+   width: 100%;
+   //height: 90vh;
+
+   display: flex;;
+   justify-content: space-evenly;
+   align-items: center;
+
+   .info{
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+
+      h2{
+         font-family: 'Work Sans', sans-serif;
+         font-style: normal;
+         font-weight: 700;
+         font-size: 2.48em;
+
+         color: #191919;
+      }
+      p{
+         font-family: 'IBM Plex Sans';
+         font-weight: 400;
+         font-size: 16px;
+
+         color: #424242;
+      }
+   }
+
+   .answers{
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+
+      .question{
+         display: flex;
+         flex-direction: column;
+         gap: 1rem;
+
+         padding-bottom: 1rem;
+         border-bottom: 0.1rem solid rgba(25, 25, 25, 0.05);
+
+         h3{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            font-size: 1.48em;
+            font-weight: 600;
+
+            cursor: pointer;
+            transition: 0.4s;
+
+            &:hover{
+               opacity: 0.75;
+            }
+
+            svg{
+               transition: 0.4s;
+            }
+         }
+         .content{
+            overflow: hidden;
+
+            height: 0;
+            p{
+               inline-size: 20rem;
+            }
+         }
+
+         .showText{
+            height: auto;
+         }
+         .transformArrow{
+            transform: rotate(180deg);
+         }
+      }
+   }
+}
+
+.offer{
+   .logo{
+      z-index: -1;
+
+      position: absolute;
+
+      top: -4rem;
+      left: -17rem;
+
+      opacity: 0.5;
+      filter: drop-shadow(0px 0px 2rem rgba(25, 25, 25, 0.322));
+      transform: rotate(90deg);
+      filter: grayscale(80%);
+
+      img{
+         width: 100%;
+      }
+   }
+   position: relative;
+
+   padding: 10rem 0;
+
+   width: 100%;
+
+   display: flex;
+   justify-content: center;
+   align-items: center;
+
+   .info{
+      padding: 8rem 0;
+      width: 95%;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 2rem;
+
+      background: rgba(255, 255, 255, 0.05);
+      /* ui-bg-blur */
+   
+      backdrop-filter: blur(12.5px);
+      /* Note: backdrop-filter has minimal browser support */
+   
+      border-radius: 32px;
+
+      .text{
+         display: flex;
+         flex-direction: column;
+         gap: 2rem;
+
+         h2{
+            font-weight: 700;
+            font-size: 2.45em;
+            line-height: 110%;
+            text-align: center;
+         }
+         p{
+            text-align: center;
+         }
+      }
+
+      // кнопка
+      a{
+         padding: 1rem 2rem;
+
+         width: 15.25rem;
+
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         gap: 0.4rem;
+
+         color: rgb(255, 255, 255);
+         text-decoration: none;
+         font-weight: 400;
+         font-size: 1em;
+         letter-spacing: 0.02em;
+
+         background: linear-gradient(90.59deg, #504DE2 13.95%, #3E7EFB 69.14%), #424242;
+         border-radius: 16px;
+
+         transition: 0.4s;
+         &:hover{
+            opacity: 0.75;
+         }
+      }
+   }
+}
+
+.footer{
+   padding: 2rem 2rem;
+
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+
+   font-family: 'IBM Plex Sans';
+
+   border-top: 0.1rem solid rgba(25, 25, 25, 0.1) ;
+
+   a{
+      text-decoration: none;
+      font-weight: 400;
+      font-size: 0.8em;
+
+      color: #191919;
+      transition: 0.4s;
+
+      &:hover{
+         opacity: 0.75;
+      }
+   }
+
+   .info{
+      display: flex;
+      gap: 2rem;
+   }
+   .links{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 2rem;
+
+      .language{
+         position: relative;
+
+         padding: 0.6rem 1rem;
+
+         background: rgba(25, 25, 25, 0.1);
+         border-radius: 0.6rem;
+
+         a{
+            width: 4rem;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 0.4rem;
+
+            font-size: 0.8em;
+            text-decoration: none;
+            font-weight: 400;
+      
+            color: #191919;
+
+            cursor: pointer;
+
+            svg{
+               transition: 0.4s;
+            }
+            
+            .rotate180{
+               transform: rotate(180deg);
+            }
+         }
+
+         .content{
+            pointer-events: none;
+
+            position: absolute;
+            bottom: 0;
+            left: 0;
+
+            padding: 0.6rem 1rem;
+
+            opacity: 0;
+            transition: 0.4s;
+
+            background: rgba(25, 25, 25, 0.1);
+            border-radius: 0.6rem;
+
+            a{
+               width: 4rem;
+
+               display: flex;
+               justify-content: center;
+               align-items: center;
+               gap: 0.4rem;
+   
+               font-size: 0.8em;
+               text-decoration: none;
+               font-weight: 400;
+         
+               color: #191919;
+   
+               cursor: pointer;
+            }
+         }
+
+         .showLang{
+            pointer-events: auto;
+
+            opacity: 1;
+            bottom: 2.68rem;
+         }
+      }
+   }
+}
+
+
+// editing nav bar
+@media screen and (max-width: 1060px) {
    .nav{
       padding: 0 1rem;
 
@@ -270,16 +777,31 @@ body{
       left: 0;
 
       border-radius: 0;
-
-      .signs{
+      
+      .btns{
          display: none !important;
       }
-      .signsMenu{
+      .burgerMenu{
          display: flex !important;
+         order: -1;
+      }
+      .btnsForBurgerMenu{
+         display: flex;
       }
    }
+}
+@media screen and (max-width: 930px){
+   .footer{
+      flex-direction: column-reverse;
+      gap: 1rem;
 
-
+      .links{
+         flex-direction: column;
+         gap: 3rem;
+      }
+   }
+}
+@media screen and (max-width: 850px){
    //перемещение heading'а
    .head{
       .heading{
@@ -298,6 +820,47 @@ body{
          }
       }
    }
+
+   //изменение ответов на впопросы
+   .questions{
+      padding: 0rem 2rem;
+      padding-top: 20rem;
+
+      width: 100%;
+      
+      flex-direction: column;
+      gap: 4rem;
+
+      .answers{
+         .question{
+            .content{
+               p{
+                  inline-size: auto;
+                  word-wrap: break-word;
+                  flex-wrap: 1;
+               }
+            }
+         }
+      }
+   }
+
+   .offer{
+      .logo{
+         display: none;
+      }
+   }
+}
+@media screen and (max-width: 720px) {
+
+   // editing nav bar
+   .nav{
+      .signs{
+         display: none !important;
+      }
+      .signsMenu{
+         display: flex !important;
+      }
+   }
 }
 
 // hide label text
@@ -311,3 +874,15 @@ body{
       }
    }
 }
+
+// адаптация карточек под разные устройства
+@media screen and (min-width: 748px){
+   .cards{ 
+      grid-template-columns: repeat(2, 1fr); 
+   }
+}
+@media screen and (min-width: 1130px){
+   .cards{ 
+      grid-template-columns: repeat(3, 1fr); 
+   }
+ }
