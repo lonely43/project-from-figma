@@ -444,12 +444,13 @@ body {
 .questions .answers .question .content {
   overflow: hidden;
   height: 0;
+  transition: 0.6s;
 }
 .questions .answers .question .content p {
   inline-size: 20rem;
 }
 .questions .answers .question .showText {
-  height: auto;
+  height: 4rem;
 }
 .questions .answers .question .transformArrow {
   transform: rotate(180deg);
