@@ -73,20 +73,36 @@ body {
   background: rgba(25, 25, 25, 0.1);
 }
 .nav .btnsForBurgerMenu {
-  overflow: hidden;
   position: absolute;
   top: -1rem;
   left: 0;
   width: 100vw;
   height: 100vh;
   display: none;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 1rem;
   background-color: white;
   transform: translateX(-100rem);
   transition: 0.4s ease-in-out;
+}
+.nav .btnsForBurgerMenu .nav {
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  align-content: center;
+  justify-items: center;
+}
+.nav .btnsForBurgerMenu .nav a {
+  padding: 1rem 0;
+  width: 6rem;
+  text-align: center;
+  border-bottom: 0.1rem solid rgba(25, 25, 25, 0.1);
+}
+.nav .btnsForBurgerMenu .nav a:last-child {
+  border: none;
+}
+.nav .btnsForBurgerMenu .nav a:hover {
+  opacity: 0.75;
 }
 .nav .showBurgerMenu {
   transform: translateX(0rem);
